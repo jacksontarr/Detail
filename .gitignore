@@ -1,0 +1,8 @@
+**/.idea
+**/.vscode
+**/project-info.json
+**/.direnv
+**/.envrc
+**/.Babel
+estore-ui/node_modules
+estore-ui/.angular

@@ -3,6 +3,15 @@ package com.detail.api.detailapi.model;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Car {
+    public enum Progress {
+        NOT_STARTED,
+        GAS,
+        INTERIOR,
+        EXTERIOR,
+        DRYING,
+        COMPLETED
+    }
+
     @JsonProperty("make") String make;
     @JsonProperty("model") String model;
     @JsonProperty("stockNumber") String stockNumber;
@@ -16,13 +25,15 @@ public class Car {
                @JsonProperty("stockNumber") String stockNumber,
                @JsonProperty("soldBy") int soldBy,
                @JsonProperty("soldTo") int soldTo,
-               @JsonProperty("progress") Progress progress) {
+               @JsonProperty("progress") Progress progress,
+               @JsonProperty("numDetailers") int numDetailers) {
         this.make = make;
         this.model = model;
         this.stockNumber = stockNumber;
         this.soldBy = soldBy;
         this.soldTo = soldTo;
         this.progress = progress;
+        this.numDetailers = numDetailers;
     }
 
     public String getMake() {
@@ -71,5 +82,13 @@ public class Car {
 
     public void setProgress(Progress progress) {
         this.progress = progress;
+    }
+
+    public int getNumDetailers() {
+        return numDetailers;
+    }
+
+    public void setNumDetailers(int numDetailers) {
+        this.numDetailers = numDetailers;
     }
 }

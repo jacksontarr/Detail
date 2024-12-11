@@ -7,11 +7,11 @@
 		<version>2.6.2</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.estore.api</groupId>
-	<artifactId>estore-api</artifactId>
+	<groupId>com.detail.api</groupId>
+	<artifactId>detail-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>estore-api</name>
-	<description>API for E-Store</description>
+	<name>detail-api</name>
+	<description>API for Detail</description>
 	<properties>
 		<java.version>11</java.version>
 		<jacoco.version>0.8.7</jacoco.version>
@@ -64,7 +64,7 @@
 					</execution>
 				</executions>
 				<configuration>
-					<mainClass>com.estore.api.estoreapi.EstoreApiApplication</mainClass>
+					<mainClass>com.detail.api.detailapi.DetailApiApplication</mainClass>
 					<arguments></arguments>
 				</configuration>
 			</plugin>
@@ -99,7 +99,7 @@
 						<id>controller</id>
 						<configuration>
 							<footer>Controller Tier</footer>
-							<title>E-Store API Controller Tier Test Coverage</title>
+							<title>Detail API Controller Tier Test Coverage</title>
 							<outputDirectory>target/site/jacoco/controller</outputDirectory>
 						</configuration>
 						<goals>
@@ -110,7 +110,7 @@
 						<id>persistence</id>
 						<configuration>
 							<footer>Persistence Tier</footer>
-							<title>E-Store API Persistence Tier Test Coverage</title>
+							<title>Detail API Persistence Tier Test Coverage</title>
 							<outputDirectory>target/site/jacoco/persistence</outputDirectory>
 						</configuration>
 						<goals>
@@ -121,7 +121,7 @@
 						<id>model</id>
 						<configuration>
 							<footer>Model Tier</footer>
-							<title>E-Store API Model Tier Test Coverage</title>
+							<title>Detail API Model Tier Test Coverage</title>
 							<outputDirectory>target/site/jacoco/model</outputDirectory>
 						</configuration>
 						<goals>

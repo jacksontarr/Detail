@@ -14,6 +14,7 @@ public class CarTest {
     private String expectedMake;
     private String expectedModel;
     private String expectedStockNumber;
+    private int expectedCarID;
     private int expectedSoldBy;
     private int expectedSoldTo;
     private Progress expectedProgress;
@@ -26,6 +27,7 @@ public class CarTest {
         expectedMake = "Ford";
         expectedModel = "Mustang Dark Horse";
         expectedStockNumber = "24P632";
+        expectedCarID = 224632;
         expectedSoldBy = 1;
         expectedSoldTo = 2;
         expectedProgress = Progress.NOT_STARTED;
@@ -51,6 +53,11 @@ public class CarTest {
     @Test
     public void testStockNumber() {
         assertEquals(expectedStockNumber, car.getStockNumber());
+    }
+
+    @Test
+    public void testCarID() {
+        assertEquals(expectedCarID, car.getCarID());
     }
 
     @Test

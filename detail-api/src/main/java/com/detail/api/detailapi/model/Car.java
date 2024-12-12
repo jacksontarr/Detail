@@ -16,6 +16,7 @@ public class Car {
     @JsonProperty("make") String make;
     @JsonProperty("model") String model;
     @JsonProperty("stockNumber") String stockNumber;
+    @JsonProperty("carID") int carID;
     @JsonProperty("soldBy") int soldBy;
     @JsonProperty("soldTo") int soldTo;
     @JsonProperty("progress") Progress progress;
@@ -33,6 +34,7 @@ public class Car {
         this.make = make;
         this.model = model;
         this.stockNumber = stockNumber;
+        this.carID = stockNumberToInt();
         this.soldBy = soldBy;
         this.soldTo = soldTo;
         this.progress = progress;
@@ -71,6 +73,10 @@ public class Car {
         this.stockNumber = stockNumber;
     }
 
+    public int getCarID() {
+        return carID;
+    }
+
     public int getSoldBy() {
         return soldBy;
     }
@@ -101,5 +107,21 @@ public class Car {
 
     public void setNumDetailers(int numDetailers) {
         this.numDetailers = numDetailers;
+    }
+
+    public int stockNumberToInt() {
+        String strID;
+        char mod = stockNumber.charAt(2);
+
+        if (Character.toLowerCase(mod) == 'm')
+            strID = "1";  // Mazda --> first char 1
+        else
+            strID = "2";  // Ford --> first char 2
+        for (int i = 0; i < stockNumber.length(); i++) {
+            char c = stockNumber.charAt(i);
+            if (c >= 48 && c <= 57)
+                strID += c;
+        }
+        return Integer.parseInt(strID);
     }
 }

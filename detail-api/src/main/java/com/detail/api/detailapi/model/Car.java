@@ -12,6 +12,7 @@ public class Car {
         COMPLETED
     }
 
+    @JsonProperty("year") int year;
     @JsonProperty("make") String make;
     @JsonProperty("model") String model;
     @JsonProperty("stockNumber") String stockNumber;
@@ -20,13 +21,15 @@ public class Car {
     @JsonProperty("progress") Progress progress;
     @JsonProperty("numDetailers") int numDetailers;
 
-    public Car(@JsonProperty("make") String make,
+    public Car(@JsonProperty("year") int year,
+               @JsonProperty("make") String make,
                @JsonProperty("model") String model,
                @JsonProperty("stockNumber") String stockNumber,
                @JsonProperty("soldBy") int soldBy,
                @JsonProperty("soldTo") int soldTo,
                @JsonProperty("progress") Progress progress,
                @JsonProperty("numDetailers") int numDetailers) {
+        this.year = year;
         this.make = make;
         this.model = model;
         this.stockNumber = stockNumber;
@@ -34,6 +37,14 @@ public class Car {
         this.soldTo = soldTo;
         this.progress = progress;
         this.numDetailers = numDetailers;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public String getMake() {

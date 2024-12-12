@@ -49,7 +49,7 @@ public class UserTest {
 
     @Test
     public void testCarsListFull() {
-        expectedCarsList.add(new Car("Mazda", "Cx-5", "25m100", 1, 2, Progress.NOT_STARTED, 2));
+        expectedCarsList.add(new Car(2025, "Mazda", "Cx-5", "25m100", 1, 2, Progress.NOT_STARTED, 2));
         user = new User(expectedLoginID, expectedUsername, expectedIsAdmin, expectedCarsList);
         assertEquals(expectedCarsList, user.getCarsList());
     }

@@ -10,6 +10,7 @@ import com.detail.api.detailapi.model.Car.Progress;
 
 @Tag("model-tier")
 public class CarTest {
+    private int expectedYear;
     private String expectedMake;
     private String expectedModel;
     private String expectedStockNumber;
@@ -21,6 +22,7 @@ public class CarTest {
 
     @BeforeEach
     public void setupCar() {
+        expectedYear = 2024;
         expectedMake = "Ford";
         expectedModel = "Mustang Dark Horse";
         expectedStockNumber = "24P632";
@@ -28,7 +30,12 @@ public class CarTest {
         expectedSoldTo = 2;
         expectedProgress = Progress.NOT_STARTED;
         expectedNumDetailers = 2;
-        car = new Car(expectedMake, expectedModel, expectedStockNumber, expectedSoldBy, expectedSoldTo, expectedProgress, expectedNumDetailers);
+        car = new Car(expectedYear, expectedMake, expectedModel, expectedStockNumber, expectedSoldBy, expectedSoldTo, expectedProgress, expectedNumDetailers);
+    }
+
+    @Test
+    public void testYear() {
+        assertEquals(expectedYear, car.getYear());
     }
 
     @Test
